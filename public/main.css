@@ -1,6 +1,6 @@
 body {
-  background-color: white;
-  color: rgb(32, 32, 32);
+  background-color: orange;
+  color: rgb(0,0,0);
 }
 
 #page {
@@ -9,7 +9,7 @@ body {
 }
 
 #message-form {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   padding-bottom: 20px;
 }
 
@@ -28,4 +28,18 @@ body {
   margin-bottom: 10px;
   margin-top: 10px;
   text-align: right;
+  
+}
+
+.message-main{
+  margin-bottom:10px;
+  border:1px solid black; 
+}
+.message-title{
+  font-weight: bold;
+  background-color: gray;
+  font-size: 30px;
+  font-style:inherit; 
+  text-align:center; 
+
 }

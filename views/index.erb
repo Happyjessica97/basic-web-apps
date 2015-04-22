@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Social Wall</title>
+    <title>Welcome to St0ries!</title>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="normalize.css">
@@ -10,25 +11,42 @@
   <body>
     <div id="page">
       <h1>Social Wall</h1>
+      <a href = "/signup">Click here to sign up! </a>
       <form id="message-form" method="POST" action="/messages">
+        <input type ="text" id = "message-title"name = "title" placeholder ="Enter a title">
+        
+        
         <textarea id="message-body" name="body" placeholder="Enter a message here."></textarea>
         <button type="submit">Post Message</button>
+       
+
       </form>
       <% if messages.empty? %>
-        <h2>Sorry, no messages. :(</h2>
+        <h2>Sorry, no messages. :P</h2>
       <% else %>
         <h2>Messages</h2>
         <ol class="message-list">
           <% messages.each do |message| %>
             <li>
-              <div class="message-body">
-                <%= message.body %>
+              <div class="message-main">
+                <div class ="message-title">
+                  <%= message.title %>
+                </div>
+                <div class="message-body">
+                  <%= message.body %>
+                </div>
+              <form id="message-form" method="POST" action="/messages/<%=message.id%>">
+                 <button type="submit">LIKE</button>
+              </form>
+              <div class= "message-like">
+                total likes: <%= message.likes%>
               </div>
               <div class="message-timestamp">
                 Posted on <%= message.created_at.strftime("%B %d, %Y at %l:%M%p") %>
               </div>
+              </div>
             </li>
-          <% end %>
+           <%end %>
         </ol>
       <% end %>
     </div>

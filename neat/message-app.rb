@@ -3,8 +3,8 @@ require "sinatra"     # Load the Sinatra web framework
 get("/") do
   html = ""
 
-  html.concat("<h1>Message of The Day</h1>")
-  html.concat("<a href='/message'>See today's message.</a>")
+  html.concat("<h1>Message of The May</h1>")
+  html.concat("<a href='/message'>There's a girl named May and she likes to say the message of the day. </a>")
 
   body(html)
 end

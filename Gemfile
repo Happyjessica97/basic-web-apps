@@ -13,6 +13,8 @@ gem "datamapper", "~> 1.2.0"   # DataMapper is the database library we're using
 group :development do
   gem "sqlite3"                # Use the SQLite3 database locally
   gem "dm-sqlite-adapter"      # Allow DataMapper to use SQLite3
+
+  gem "dotenv"
   gem "rerun"
 end
 
